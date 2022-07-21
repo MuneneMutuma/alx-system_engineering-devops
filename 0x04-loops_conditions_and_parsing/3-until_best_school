@@ -1,0 +1,9 @@
+#!/bin/bash
+# uses until to print "Best School" 10 times
+
+x=1
+until [ $x -ge 10 ]
+do
+	echo "Best School"
+	((x++))
+done
