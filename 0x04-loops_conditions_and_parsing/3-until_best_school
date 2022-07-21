@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bin/env bash
 # uses until to print "Best School" 10 times
 
 x=1
