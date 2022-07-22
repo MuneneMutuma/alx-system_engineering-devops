@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Uses while loop to print "Best School 10 times"
+
+x=1
+while [ $x -le 21 ]
+do
+	in case $x
+		echo "17"
+	
+	(( x+=1 ))
+done

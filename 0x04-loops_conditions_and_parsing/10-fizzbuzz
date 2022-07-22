@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# prints FizzBuzz
+
+x=1
+while [ $x -le 100 ]
+do
+	rem15=$((x%15))
+	rem3=$((x%3))
+	rem5=$((x%5))
+	if [ $rem15 -eq 0 ] && [ ! $x -lt 10 ]
+	then
+		echo "FizzBuzz"
+	elif [ $rem3 -eq 0 ]
+	then
+		echo "Fizz"
+	elif [ $rem5 -eq 0 ]
+	then
+		echo "Buzz"
+	else
+		echo $x
+	fi
+
+	((x++))
+done
