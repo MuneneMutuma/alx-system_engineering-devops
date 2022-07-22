@@ -7,4 +7,5 @@ while [ $x -gt 0 ]
 do
 	echo "I am alive!" >> /tmp/my_process
 	sleep 2
+	((x++))
 done
