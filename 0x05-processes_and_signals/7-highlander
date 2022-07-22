@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# prints "To infinity and beyond" indefinitely
+
+
+invincible() {
+	echo "I am invincible!!!"
+}
+trap invincible SIGTERM
+
+x=1
+while [ $x -gt 0 ]
+do
+	echo "To infinity and beyond"
+	echo $$
+	((x++))
+	sleep 2
+done
