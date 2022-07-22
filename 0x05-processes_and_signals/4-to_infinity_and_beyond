@@ -6,4 +6,5 @@ while [ $x -gt 0 ]
 do
 	echo "To infinity and beyond"
 	((x++))
+	sleep 2
 done
