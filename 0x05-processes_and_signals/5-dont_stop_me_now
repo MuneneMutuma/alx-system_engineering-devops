@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # stops the process "4-to_infinity and beyond"
 
-kill "$(pgrep -a bash | grep 4-to_infinity_and_beyond | awk '{ print $1}')"
+kill "$(pgrep -f 4-to_infinity_and_beyond)"
