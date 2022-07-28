@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# shows attatched ips
+
+ifconfig | grep "inet " | cut --fields=10 --delimiter=" "
