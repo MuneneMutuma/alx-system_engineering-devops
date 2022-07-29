@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 # changes home IP to 127.0.0.2 and sets facebook.com ip to 8.8.8.8
 
-sed -i '/localhost$/s/\S*\.\S*\.\S*/127.0.0.2/' /etc/hosts
-sed -i '1i\8.8.8.8        facebook.com' /etc/hosts
+cp /etc/hosts ~/hosts.tmp
+sed -i '/localhost$/s/\S*\.\S*\.\S*/127.0.0.2/' ~/hosts.tmp
+sed -i '1i\8.8.8.8        facebook.com' ~/hosts.tmp
+
+cp -f ~/hosts.tmp /etc/hosts
