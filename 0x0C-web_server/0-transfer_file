@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# transfers file from local machine to server using scp
 
 if [ "$#" -lt 3 ]
 then
