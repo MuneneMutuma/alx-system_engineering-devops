@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+sudo apt-get update
+sudo apt-get install haproxy
+
+
+# make sure that HAproxy can be managed via an init script
+sudo echo "
+# set ENABLED to 1 if you want the init script to start haproxy
+ENABLED=1" | tee -a /etc/default/haproxy
+
+# configure load balance
+sudo echo "
+listen www
+	bind :80
+	mode tcp
+
+	balance roundrobin
+	server web1 35.172.230.212:80 check
+	server web2 3.233.224.164:80 check
+" | tee -a /etc/haproxy/haproxy.cfg
