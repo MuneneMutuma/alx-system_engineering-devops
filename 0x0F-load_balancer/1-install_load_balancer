@@ -21,3 +21,5 @@ listen www
 	server web1 35.172.230.212:80 check
 	server web2 3.233.224.164:80 check
 " | tee -a /etc/haproxy/haproxy.cfg
+
+service haproxy start
