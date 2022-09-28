@@ -2,4 +2,9 @@
 # Configures ubuntu machine to add a custom header to the response
 # of a nginx server running on it
 
+sudo apt -y update
+sudo apt -y install nginx
+
+ufw allow 'Nginx HTTP'
+
 sudo sed -i '12i\        add_header X-Served-By $HOSTNAME;' /etc/nginx/nginx.conf
