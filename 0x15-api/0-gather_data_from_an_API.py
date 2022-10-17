@@ -14,14 +14,14 @@ def get_data():
     tasks = requests.get(f"{base_url}/todos/?userId={userId}").json()
     completed_tasks = 0
     for task in tasks:
-        if task["completed"]:
+        if task.get("completed"):
             completed_tasks += 1
 
-    print(f"Employee {user[0].get('name')} is done with tasks\
-            ({completed_tasks}/{len(tasks)}):")
+    print("Employee {} is done with tasks({}):".format(
+                user[0].get('name'), completed_tasks/len(tasks)))
     for task in tasks:
         if task["completed"]:
-            print(f"\t{task.get('title')}")
+            print(f"\t {task.get('title')}")
 
 
 if __name__ == "__main__":
