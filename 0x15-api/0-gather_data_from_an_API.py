@@ -17,8 +17,8 @@ def get_data():
         if task.get("completed"):
             completed_tasks += 1
 
-    print("Employee {} is done with tasks({}):".format(
-                user[0].get('name'), completed_tasks/len(tasks)))
+    print("Employee {} is done with tasks({}/{}):".format(
+                user[0].get('name'), completed_tasks, len(tasks)))
     for task in tasks:
         if task["completed"]:
             print(f"\t {task.get('title')}")
