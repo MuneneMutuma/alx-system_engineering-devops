@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""get data from API"""
+"""get data from API
+"""
 
 import requests
 import sys
@@ -11,9 +12,8 @@ if __name__ == "__main__":
     base_url = "https://jsonplaceholder.typicode.com"
 
     user = requests.get(f"{base_url}/users/{userId}").json()
-    all_tasks = requests.get(f"{base_url}/todos").json()
+    user_tasks = requests.get(f"{base_url}/todos/?userId={userId}").json()
 
-    user_tasks = list(filter(lambda x: x.get("userId") == userId, all_tasks))
     completed = list(filter(lambda x: x.get("completed"), user_tasks))
 
     user_name = user.get('name')
