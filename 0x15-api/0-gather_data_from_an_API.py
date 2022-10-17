@@ -6,7 +6,7 @@ import requests
 import sys
 
 
-def get_data():
+if __name__ == "__main__":
     """get data from api"""
     userId = sys.argv[1]
     base_url = "https://jsonplaceholder.typicode.com"
@@ -24,7 +24,3 @@ def get_data():
         if task["completed"]:
             print(f"\t {task.get('title')}",
                   file=sys.stdout)
-
-
-if __name__ == "__main__":
-    get_data()
