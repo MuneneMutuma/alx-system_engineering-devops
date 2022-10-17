@@ -18,10 +18,12 @@ def get_data():
             completed_tasks += 1
 
     print("Employee {} is done with tasks({}/{}):".format(
-                user[0].get('name'), completed_tasks, len(tasks)))
+                user[0].get('name'), completed_tasks, len(tasks)),
+          file=sys.stdout)
     for task in tasks:
         if task["completed"]:
-            print(f"\t {task.get('title')}")
+            print(f"\t {task.get('title')}",
+                  file=sys.stdout)
 
 
 if __name__ == "__main__":
