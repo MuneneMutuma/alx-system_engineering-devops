@@ -18,8 +18,7 @@ if __name__ == "__main__":
     completed = list(filter(lambda x: x.get("completed"), user_tasks))
 
     user_name = user.get('name')
-    print("Employee {} is done with tasks({}/{}):".format(
-            user_name, len(completed), len(user_tasks)),
-          file=sys.stdout)
+    sys.stdout.write("Employee {} is done with tasks({}/{}):\n".format(
+            user_name, len(completed), len(user_tasks)))
     for task in completed:
-        print(f"\t {task.get('title')}", file=sys.stdout)
+        sys.stdout.write(f"\t {task.get('title')}\n")
