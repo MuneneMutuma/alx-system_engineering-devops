@@ -10,7 +10,7 @@ import requests
 def top_ten(subreddit):
     """Gets the top ten subreddits"""
 
-    url = f'https://www.reddit.com/r/{subreddit}/hot.json'
+    url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
     headers = {'User-Agent': 'alx/top-ten'}
     params = {"limit": 10}
 

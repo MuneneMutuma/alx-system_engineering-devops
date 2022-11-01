@@ -33,4 +33,6 @@ def count_words(subreddit, word_list, after=None, count_dict={}):
     after = response.json().get('data').get('after')
     if after is not None:
         return count_words(subreddit, word_list, after, count_dict)
+    for k, v in sorted(count_dict.items()):
+        print("{}: {}".format(k, v))
     return sorted(count_dict)
