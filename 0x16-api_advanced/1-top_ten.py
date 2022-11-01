@@ -1,9 +1,14 @@
 #!/usr/bin/python3
-"""module queries and prints titles of top ten hot posts in subreddit"""
+"""
+module queries and prints titles of top ten hot posts in subreddit
+Invalid subreddits may return a redirect to search results.
+Ensure that you are not following redirects.
+"""
 import requests
 
 
 def top_ten(subreddit):
+    """Gets the top ten subreddits"""
     url = f'https://www.reddit.com/r/{subreddit}/hot.json'
     headers = {'User-Agent': 'alx/top-ten'}
 
