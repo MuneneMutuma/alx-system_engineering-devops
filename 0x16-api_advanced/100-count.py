@@ -17,7 +17,6 @@ def count_words(subreddit, word_list, after=None, count_dict={}):
     response = requests.get(url, headers=headers, params=params,
                             allow_redirects=False)
 
-    print(response.url)
     if response.status_code != 200:
         return None
 
@@ -26,9 +25,10 @@ def count_words(subreddit, word_list, after=None, count_dict={}):
         data = response.json().get('data').get('children')[i].get('data')
         for word in word_list:
             word = word.lower()
-            title = data.get('title').lower()
-            print(data.get('title'))
-            count_dict[word] = count_dict.get(word, 0) + title.count(word)
+            title_words = data.get('title').lower().split(' ')
+            for title in title_words:
+                if title == word:
+                    count_dict[word] = count_dict.get(word, 0) + 1
 
     print(count_dict)
     after = response.json().get('data').get('after')
